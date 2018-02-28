@@ -1,0 +1,71 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block head %}
+
+      <title> </title>
+{% endblock %}
+
+
+
+   {% block body %}
+   <div class="container">
+                  
+                      <div class="row">
+  
+       <h1>Taarifa kwa mzazi wa:{{user.first_name}}<br>{{user.last_name}}</h1>
+       <h1>1) Taarifa Binafsi</h1>
+          
+          
+          <p>Namba ya simu:{{user.userprofile.phone}}</p>
+          <h3>PICHA</h3>
+           {%if user.userprofile.image%}
+          <img src="{{ user.userprofile.image2.url }}" width="240">
+            {%endif%}
+          
+          <br><br>
+        <h1>2)Darasa Lake</h1>  
+        <p> Jina la Mwalimu Mkuu: {{user.userprofile.upliner}}</p>
+        <p>Idadi ya Wanafuzi: {{user.userprofile.downliner}}
+        <p> Maelezo Mengine:{{user.userprofile.Maelezo}}
+        <h3>Picha ya Darasa</h3>
+        {%if user.userprofile.image%}
+          <img src="{{ user.userprofile.image.url }}" width="240">
+            {%endif%}
+        <br><br>
+        
+          
+            
+            <h1>3) Account yake</h1>  
+            <p> Kiasi alicholipa:{{user.userprofile.account}}</p>
+            <p> Kiasi unachodaiwa:{{user.userprofile.debt}}</p>
+            <p> Maelezo ya account:{{user.userprofile.accountdescription}}</p>
+            
+            
+            
+            <h1>Ujumbe kutoka ofisini</h1> 
+         
+          <p>4) Maelezo Mengine: {{user.userprofile.Proffession}}</p>
+        <br>
+          <h1> 5) Wasiliana Nasi</h1>
+          <div class="container">
+        <div class="container">
+    <h1><a href="{% url 'home:make' %}"> Bonyeza hapa kuwasiliana na ofisi</a></h1>
+        </div>
+          
+          
+          
+          
+            
+          
+                      </div>
+          </div>
+          </div>
+   </div>
+   
+
+
+   </div>
+   {% endblock %}
